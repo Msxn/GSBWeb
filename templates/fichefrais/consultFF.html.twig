@@ -1,0 +1,44 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    Consultation Fiche Frais
+{% endblock %}
+
+{% block body %}
+   
+<a href="/accueil"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+
+
+<h3><center>Consulter <b>Fiches Frais</b></center></h3>
+
+<center>
+  <div class="container">
+    <div class="well">
+      <table>
+        <tr>
+          <th>Numéro Fiche Frais</th>
+          <th>Code Identifiant</th>
+          <th>Etat de la fiche</th>
+          <th>Libellé</th>
+          <th>Créée le</th>
+          <th>Nombre de justificatifs</th>
+          <th>Montant total</th>
+          <th>Date de modification</th>
+          <th>Forfait Etape</th>
+          <th>Forfait kilométrique</th>
+          <th>Nuitée hotêl</th>
+          <th>Forfait repas</th>
+        </tr>
+        {% for line in fiche %}
+          <tr>
+            {% for data in line %}
+              <td>{{ data }}</td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+</center>
+ 
+{% endblock %}
